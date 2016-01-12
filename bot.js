@@ -99,11 +99,11 @@ var dubBot = {
         botVar.currentSong = API.currentSongName();
       botVar.currentDJ   = API.currentDjName();
       
-      botDebug.debugMessage(true, "[ API.getSongLength() ] = ", API.getSongLength());
-      if (API.getSongLength() >= SETTINGS.settings.maximumSongLength) {
-        API.sendChat(botChat.subChat(botChat.getChatMessage("timelimit"), {name: botVar.currentDJ, maxlength: SETTINGS.settings.maximumSongLength}));
-        dubBot.skipBadSong(botVar.currentDJ, botVar.botName, "Song too long");
-      }
+     //botDebug.debugMessage(true, "[ API.getSongLength() ] = ", API.getSongLength());
+     // if (API.getSongLength() >= SETTINGS.settings.maximumSongLength) {
+     //   API.sendChat(botChat.subChat(botChat.getChatMessage("timelimit"), {name: botVar.currentDJ, maxlength: SETTINGS.settings.maximumSongLength}));
+     //   dubBot.skipBadSong(botVar.currentDJ, botVar.botName, "Song too long");
+     // }
       //todoer check blacklist
     }
       catch(err) { UTIL.logException("validateCurrentSong: " + err.message); }
