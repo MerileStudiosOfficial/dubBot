@@ -795,7 +795,7 @@ var botChat = {
    botChat.chatMessages.push(["invalidgifrandom", " [@%%NAME%%] Invalid request, try again."]);
    botChat.chatMessages.push(["logout", " [@%%NAME%%] Logging out %%BOTNAME%%"]);
 
-   botChat.chatMessages.push(["welcome", "Welcome to Missery's Base @%%NAME%%.  Check out our room rules here: http://tinyurl.com/TastyTunesRules"]);
+   botChat.chatMessages.push(["welcome", "Welcome to Missery's Base @%%NAME%%.  Check out http://raidforums.com :D"]);
    botChat.chatMessages.push(["welcomeback", "Welcome back, @%%NAME%%"]);
    botChat.chatMessages.push(["songknown", " :repeat: This song has been played %%PLAYS%% time(s) in the last %%TIMETOTAL%%, last play was %%LASTTIME%% ago. :repeat:"]);
    botChat.chatMessages.push(["songknown2", " :repeat: @%%NAME%% - This song was just played %%LASTTIME%% ago. :repeat:"]);
