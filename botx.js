@@ -4014,26 +4014,6 @@ var BOTCOMMANDS = {
             },
             
 
-                command: 'timeguard',
-                rank: 'bouncer',
-                type: 'exact',
-                functionality: function (chat, cmd) {
-                    if (this.type === 'exact' && chat.message.length !== cmd.length) return void (0);
-                    if (!BOTCOMMANDS.commands.executable(this.rank, chat)) return void (0);
-                    else {
-                        if (SETTINGS.settings.timeGuard) {
-                            SETTINGS.settings.timeGuard = !SETTINGS.settings.timeGuard;
-                            return API.sendChat(botChat.subChat(botChat.getChatMessage("toggleoff"), {name: chat.un, 'function': botChat.getChatMessage("timeguard")}));
-                        }
-                        else {
-                            SETTINGS.settings.timeGuard = !SETTINGS.settings.timeGuard;
-                            return API.sendChat(botChat.subChat(botChat.getChatMessage("toggleon"), {name: chat.un, 'function': botChat.getChatMessage("timeguard")}));
-                        }
-
-                    }
-                }
-            },
-
            /* basic
             activeCommand: {
                 command: 'active',
