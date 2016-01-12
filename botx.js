@@ -9,9 +9,9 @@
 
 //SECTION Var: All global variables:
 var botVar = {
-  version: "Version  1.01.0014",
+  version: "Version  1.00",
   ImHidden: false,
-  botName: "larry_the_law",
+  botName: "SueSakamoto",
   botID: -1,
   botStatus: false, 
   botMuted: false,
@@ -38,7 +38,7 @@ var botVar = {
     voteSkipEnabled: true,
     voteSkipLimit: 4,
     etaRestriction: false,
-    filterChat: true,
+    filterChat: false,
     currentMehCount: 0,
     botRoomUrl: "",
     roomstats: {
@@ -51,7 +51,7 @@ var botVar = {
         songCount: 0,
         chatmessagescnt: 0
     },
-    repeatSongs: true,
+    repeatSongs: false,
     repeatSongTime: 180,
     maximumDc: 90,
     maximumDcOutOfRoom: 10,
