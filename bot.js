@@ -473,7 +473,7 @@ var SETTINGS = {
         voteSkipLimit: 4,
         welcomeForeignerMsg: false,
         timeGuard: true,
-        maximumSongLength: 8,
+        maximumSongLength: 10,
         skipSound5Days: false,
         skipSound7Days: false,
         skipSoundStart: 7,
@@ -507,7 +507,7 @@ var SETTINGS = {
         messageInterval: 5,
         songstats: true,
         suppressSongStats: false,
-        commandLiteral: "."
+        commandLiteral: "!"
     },
 
     retrieveSettings: function () {
