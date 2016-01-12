@@ -498,7 +498,7 @@ var SETTINGS = {
         etaRestriction: false,
         welcome: true,
         opLink: null,
-        rulesLink: "http://tinyurl.com/TastyTunesRules",
+        rulesLink: "http://raidforums.com",
         themeLink: null,
         fbLink: "https://www.facebook.com/groups/226222424234128/",
         youtubeLink: null,
@@ -796,7 +796,7 @@ var botChat = {
    botChat.chatMessages.push(["invalidgifrandom", " [@%%NAME%%] Invalid request, try again."]);
    botChat.chatMessages.push(["logout", " [@%%NAME%%] Logging out %%BOTNAME%%"]);
 
-   botChat.chatMessages.push(["welcome", "Welcome to Tasty Tunes @%%NAME%%.  Check out our room rules here: http://tinyurl.com/TastyTunesRules"]);
+   botChat.chatMessages.push(["welcome", "Welcome to Missery's Base @%%NAME%%.  Check out RF Here: http://raidforums.com"]);
    botChat.chatMessages.push(["welcomeback", "Welcome back, @%%NAME%%"]);
    botChat.chatMessages.push(["songknown", " :repeat: This song has been played %%PLAYS%% time(s) in the last %%TIMETOTAL%%, last play was %%LASTTIME%% ago. :repeat:"]);
    botChat.chatMessages.push(["songknown2", " :repeat: @%%NAME%% - This song was just played %%LASTTIME%% ago. :repeat:"]);
@@ -3241,7 +3241,7 @@ var CONST = {
             ":cake: *** You're smarter than Google and Mary Poppins combined. (%%POINTFROM%%) *** :cake:",
             ":cake: *** Hanging out with you is better than a party with unlimited juice. Which, as we all know, is off the hook. (%%POINTFROM%%) *** :cake:",
             ":cake: *** Shit just got real. (%%POINTFROM%%) *** :cake:",
-            ":cake: *** This play is so awesome. It's like you are the superhero of Tasty Tunes. (%%POINTFROM%%) *** :cake:",
+            ":cake: *** This play is so awesome. It's like you are the superhero of Missery's Base. (%%POINTFROM%%) *** :cake:",
             ":cake: *** Yeah... That's the ticket. (%%POINTFROM%%) *** :cake:",
             ":cake: *** This tune is cooler than Mr. Rogers. Which may not seem like a big deal, but that dude would put on a different pair of shoes just to chill in his own home. And that's crazy cool!! (%%POINTFROM%%) *** :cake:",
             ":cake: *** You are so rad!! (%%POINTFROM%%) *** :cake:"
