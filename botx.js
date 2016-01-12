@@ -4013,7 +4013,7 @@ var BOTCOMMANDS = {
                 }
             },
 
-            /* basic
+            basic
             activeCommand: {
                 command: 'active',
                 rank: 'bouncer',
