@@ -52,8 +52,8 @@ var botVar = {
         songCount: 0,
         chatmessagescnt: 0
     },
-    repeatSongs: false,
-    repeatSongTime: 180,
+    repeatSongs: true,
+    repeatSongTime: 60,
     maximumDc: 90,
     maximumDcOutOfRoom: 10,
     commandCooldown: 0.1
@@ -472,7 +472,7 @@ var SETTINGS = {
         voteSkipEnabled: true,
         voteSkipLimit: 4,
         welcomeForeignerMsg: false,
-        timeGuard: true,
+        timeGuard: false,
         maximumSongLength: 10,
         skipSound5Days: false,
         skipSound7Days: false,
@@ -500,14 +500,14 @@ var SETTINGS = {
         opLink: null,
         rulesLink: "http://raidforums.com",
         themeLink: null,
-        fbLink: "https://www.facebook.com/groups/226222424234128/",
+        fbLink: "fuck facebook",
         youtubeLink: null,
         website: null,
         intervalMessages: [],
         messageInterval: 5,
         songstats: true,
         suppressSongStats: false,
-        commandLiteral: "!"
+        commandLiteral: "."
     },
 
     retrieveSettings: function () {
