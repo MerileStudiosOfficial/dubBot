@@ -2452,13 +2452,13 @@ var AI = {
     chatmsg = chatmsg.replace(/ /g, '');
     chatmsg = chatmsg.replace(/THELAW/g, '');
     chatmsg = chatmsg.replace(/CRAZYBOT/g, '');
-    chatmsg = chatmsg.replace(/FUCKBOT/g, "LARRY");
-    chatmsg = chatmsg.replace(/BOTT/g, "LARRY");
+    chatmsg = chatmsg.replace(/MIMIGA/g, "LARRY");
+    chatmsg = chatmsg.replace(/SUESAKAMOTO/g, "LARRY");
     chatmsg = chatmsg.replace(/BOT/g, "LARRY");
     chatmsg = chatmsg.replace(/HOWIS/g, "HOWS");     // Convert 2 words to the contraction
     chatmsg = chatmsg.replace(/YOUARE/g, "YOURE");   // Convert 2 words to the contraction
     chatmsg = chatmsg.replace(/LARRYIS/g, "LARRYS");
-    chatmsg = chatmsg.replace(/LARRY_THE_LAW/g, "LARRY");
+    chatmsg = chatmsg.replace(/SUE/g, "LARRY");
     chatmsg = chatmsg.replace(/IAM/g, "IM");
     botDebug.debugMessage(false, "Larry AI chatmsg: " + chatmsg);
 
