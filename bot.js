@@ -12,7 +12,7 @@
 var botVar = {
   version: "Version  1.00",
   ImHidden: false,
-  botName: "SueSakamoto",
+  botName: "CurlyBot",
   botID: -1,
   botStatus: false, 
   botMuted: false,
@@ -960,7 +960,7 @@ var botChat = {
    botChat.chatMessages.push(["eightballquestion", "%%NAME%% Question: [%%QUESTION%%]"]);
    botChat.chatMessages.push(["eightballresponse1", "%%RESPONSE%%"]);
    //botChat.chatMessages.push(["eightballresponse1", "The all knowing Larry says: %%RESPONSE%%"]);
-   botChat.chatMessages.push(["eightballresponse2", "%%NAME%% The all knowing Sue says: %%RESPONSE%%"]);
+   botChat.chatMessages.push(["eightballresponse2", "%%NAME%% The all knowing CurlyBot says: %%RESPONSE%%"]);
    botChat.chatMessages.push(["lastplayed0", ":notes: This is the 1st time this song has been played! :notes:"]);
    botChat.chatMessages.push(["lastplayed1", ":notes: This song has only been played one other time. [first time: %%LASTPLAYED%% ago] :notes:"]);
    botChat.chatMessages.push(["lastplayed2", ":notes: This song has been played %%PLAYCOUNT%% other times. [first time: %%FIRSTPLAYED%% ago] [last time: %%LASTPLAYED%% ago] :notes:"]);
@@ -2033,7 +2033,7 @@ var RANDOMCOMMENTS = {
     "Squats?  I thought you said let's do shots!",
     "I want a beer. I want a giant, ice-cold bottle of beer... and shower sex.",
     "Beer makes you feel the way you ought to feel without beer.",
-    "Sue no function beer well without.",
+    "CurlyBot no function beer well without.",
     "Drunk is when you feel sophisticated, but can't pronounce it...",
     "My girlfriend's favorite beer is water. I mean Bud Light.",
     "It's a zombie apocalypse! Quick, grab the beer!",
@@ -2178,7 +2178,7 @@ var RANDOMCOMMENTS = {
     "To error is human, to love is divine, to piss me off is a mistake!!",
     "You're right, it's my fault because I forgot you were an idiot.",
     "I'm not anti-social. I just have a strong aversion to B.S., drama and pretending.",
-    "I'm Sue. This is my brother, Darryl, and this is my other brother, Darryl",
+    "I'm CurlyBot. This is my brother, Darryl, and this is my other brother, Darryl",
     "My sex life is like a Ferrari...I don't have a Ferrari.",
     "I just saved a bunch of money on my car insurance by switching...my car into reverse and driving away from the accident. ",
     "No I'm not ignoring you. I suffer from selective hearing, usually triggered by idiots.",
@@ -2453,12 +2453,12 @@ var AI = {
     chatmsg = chatmsg.replace(/THELAW/g, '');
     chatmsg = chatmsg.replace(/CRAZYBOT/g, '');
     chatmsg = chatmsg.replace(/MIMIGA/g, "LARRY");
-    chatmsg = chatmsg.replace(/SUESAKAMOTO/g, "LARRY");
+    chatmsg = chatmsg.replace(/CURLYBOT/g, "LARRY");
     chatmsg = chatmsg.replace(/BOT/g, "LARRY");
     chatmsg = chatmsg.replace(/HOWIS/g, "HOWS");     // Convert 2 words to the contraction
     chatmsg = chatmsg.replace(/YOUARE/g, "YOURE");   // Convert 2 words to the contraction
-    chatmsg = chatmsg.replace(/LARRYIS/g, "LARRYS");
-    chatmsg = chatmsg.replace(/SUE/g, "LARRY");
+    chatmsg = chatmsg.replace(/CURLYBOTIS/g, "LARRYS");
+    chatmsg = chatmsg.replace(/CURLY/g, "LARRY");
     chatmsg = chatmsg.replace(/IAM/g, "IM");
     botDebug.debugMessage(false, "Larry AI chatmsg: " + chatmsg);
 
@@ -3235,7 +3235,7 @@ var CONST = {
             ":cake: *** Thanks to Al Gore %%POINTFROM%% can give you this: :cake: *** :cake:",
             ":cake: *** Goose, take me to bed or lose me forever. (%%POINTFROM%%) *** :cake:",
             ":cake: *** If we weren’t on the internet %%POINTFROM%% would get you tin roof rusted. *** :cake:",
-            ":cake: *** :dancer: %%POINTFROM%% gave you a tasty point.  @SueSakamoto will now dance the robot in your honor. :dancer: *** :cake:",
+            ":cake: *** :dancer: %%POINTFROM%% gave you a tasty point.  @CurlyBot will now dance the robot in your honor. :dancer: *** :cake:",
             ":cake: *** Beanbags are great and so are you!! (%%POINTFROM%%) *** :cake:",
             ":cake: *** That green jacket is within reach! (%%POINTFROM%%) *** :cake:",
             ":cake: *** You're smarter than Google and Mary Poppins combined. (%%POINTFROM%%) *** :cake:",
@@ -3494,7 +3494,7 @@ var BOTCOMMANDS = {
                     try {
                         if (this.type === 'exact' && chat.message.length !== cmd.length) return void (0);
                         if (!BOTCOMMANDS.commands.executable(this.rank, chat)) return void (0);
-                        API.sendChat("Explain MEETING: If you have to go afk type, .meeting or .lunch and Sue will remove you from line. When you return hop back in line and Sue will restore your position in line. If you leave the room for over 10 mins you'll lose your spot.");
+                        API.sendChat("Explain MEETING: If you have to go afk type, .meeting or .lunch and CurlyBot will remove you from line. When you return hop back in line and CurlyBot will restore your position in line. If you leave the room for over 10 mins you'll lose your spot.");
                     }
                     catch(err) {
                         UTIL.logException("exmeeting: " + err.message);
