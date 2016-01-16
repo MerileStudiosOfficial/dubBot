@@ -2974,7 +2974,7 @@ var CONST = {
   blacklistLink: "https://rawgit.com/SZigmund/basicBot/master/Blacklist/list.json",
   userlistLink: "https://rawgit.com/SZigmund/basicBot/master/Blacklist/users.json",
   blacklistIdLink: "https://rawgit.com/SZigmund/basicBot/master/Blacklist/ids.json",
-  cmdLink: "http://bit.ly/1DbtUV7",
+  cmdLink: "https://docs.google.com/spreadsheets/d/1Gln9Z6-54MoEwMV8I0SiQ2YLY5NXJdKHf84i-iIFdos/edit?usp=sharing",
   commandLiteral: ".",
             howAreYouComments: [
                 "Shitty, and yourself %%FU%%?",
