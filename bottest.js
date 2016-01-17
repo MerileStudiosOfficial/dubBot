@@ -3756,7 +3756,7 @@ var BOTCOMMANDS = {
                     }
                 }
             },
-                        skipCommand: {
+            skipCommand: {
                 command: 'skip',
                 rank: 'bouncer',
                 type: 'exact',
