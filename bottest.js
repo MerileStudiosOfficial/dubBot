@@ -37,7 +37,7 @@ var botVar = {
     usercommand: true,
     mutedUsers: [],
     voteSkipEnabled: true,
-    voteSkipLimit: 4,
+    voteSkipLimit: 13,
     etaRestriction: false,
     filterChat: false,
     currentMehCount: 0,
@@ -469,11 +469,11 @@ var SETTINGS = {
         maximumLocktime: 10,
         cycleGuard: true,
         maximumCycletime: 10,
-        voteSkipEnabled: true,
-        voteSkipLimit: 4,
+        voteSkipEnabled: false,
+        voteSkipLimit: 7,
         welcomeForeignerMsg: false,
         timeGuard: false,
-        maximumSongLength: 10,
+        maximumSongLength: 100,
         skipSound5Days: false,
         skipSound7Days: false,
         skipSoundStart: 7,
@@ -3753,25 +3753,6 @@ var BOTCOMMANDS = {
                     }
                     catch(err) {
                         UTIL.logException("exrollcommand: " + err.message);
-                    }
-                }
-            },
-            skipCommand: {
-                command: 'skip',
-                rank: 'bouncer',
-                type: 'exact',
-                functionality: function (chat, cmd) {
-                    if (!basicBot.roomUtilities.canSkip()) return API.sendChat("Skip too soon...");
-                    if (this.type === 'exact' && chat.message.length !== cmd.length) return void (0);
-                    if (!BOTCOMMANDS.commands.executable(this.rank, chat)) return void (0);
-                    else {
-                        API.logInfo("Skip song: " + API.getMedia().title + " by: " + chat.un + " Reason: Skip command");
-                        API.moderateForceSkip();
-                        dubBot.room.skippable = false;
-                        setTimeout(function () {
-                            dubBot.room.skippable = true
-                        }, 5 * 1000);
-
                     }
                 }
             },
