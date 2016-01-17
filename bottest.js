@@ -3756,6 +3756,25 @@ var BOTCOMMANDS = {
                     }
                 }
             },
+                        skipCommand: {
+                command: 'skip',
+                rank: 'bouncer',
+                type: 'exact',
+                functionality: function (chat, cmd) {
+                    if (!basicBot.roomUtilities.canSkip()) return API.sendChat("Skip too soon...");
+                    if (this.type === 'exact' && chat.message.length !== cmd.length) return void (0);
+                    if (!BOTCOMMANDS.commands.executable(this.rank, chat)) return void (0);
+                    else {
+                        API.logInfo("Skip song: " + API.getMedia().title + " by: " + chat.un + " Reason: Skip command");
+                        API.moderateForceSkip();
+                        dubBot.room.skippable = false;
+                        setTimeout(function () {
+                            dubBot.room.skippable = true
+                        }, 5 * 1000);
+
+                    }
+                }
+            },
             whyCommand: {
                 command: 'why',
                 rank: 'bouncer',
