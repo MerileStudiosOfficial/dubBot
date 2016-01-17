@@ -498,7 +498,7 @@ var SETTINGS = {
         etaRestriction: false,
         welcome: true,
         opLink: null,
-        rulesLink: "http://raidforums.com",
+        rulesLink: "http://pastebin.com/Lv7Q4JYF",
         themeLink: null,
         fbLink: "fuck facebook",
         youtubeLink: null,
@@ -796,7 +796,7 @@ var botChat = {
    botChat.chatMessages.push(["invalidgifrandom", " [@%%NAME%%] Invalid request, try again."]);
    botChat.chatMessages.push(["logout", " [@%%NAME%%] Logging out %%BOTNAME%%"]);
 
-   botChat.chatMessages.push(["welcome", "Welcome to Missery's Base @%%NAME%%.  Check out our forums Here: http://leoneforums.x10host.com"]);
+   botChat.chatMessages.push(["welcome", "Welcome to Muinus Room @%%NAME%%.  Check out the info section to read the rules"]);
    botChat.chatMessages.push(["welcomeback", "Welcome back, @%%NAME%%"]);
    botChat.chatMessages.push(["songknown", " :repeat: This song has been played %%PLAYS%% time(s) in the last %%TIMETOTAL%%, last play was %%LASTTIME%% ago. :repeat:"]);
    botChat.chatMessages.push(["songknown2", " :repeat: @%%NAME%% - This song was just played %%LASTTIME%% ago. :repeat:"]);
@@ -3241,7 +3241,7 @@ var CONST = {
             ":cake: *** You're smarter than Google and Mary Poppins combined. (%%POINTFROM%%) *** :cake:",
             ":cake: *** Hanging out with you is better than a party with unlimited juice. Which, as we all know, is off the hook. (%%POINTFROM%%) *** :cake:",
             ":cake: *** Shit just got real. (%%POINTFROM%%) *** :cake:",
-            ":cake: *** This play is so awesome. It's like you are the superhero of Missery's Base. (%%POINTFROM%%) *** :cake:",
+            ":cake: *** This play is so awesome. It's like you are the superhero of Muinu's Room. (%%POINTFROM%%) *** :cake:",
             ":cake: *** Yeah... That's the ticket. (%%POINTFROM%%) *** :cake:",
             ":cake: *** This tune is cooler than Mr. Rogers. Which may not seem like a big deal, but that dude would put on a different pair of shoes just to chill in his own home. And that's crazy cool!! (%%POINTFROM%%) *** :cake:",
             ":cake: *** You are so rad!! (%%POINTFROM%%) *** :cake:"
