@@ -37,7 +37,7 @@ var botVar = {
     usercommand: true,
     mutedUsers: [],
     voteSkipEnabled: true,
-    voteSkipLimit: 4,
+    voteSkipLimit: 13,
     etaRestriction: false,
     filterChat: false,
     currentMehCount: 0,
