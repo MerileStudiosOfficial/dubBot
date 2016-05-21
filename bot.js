@@ -709,7 +709,7 @@ var SETTINGS = {
         voteSkipLimit: 99,
         welcomeForeignerMsg: false,
         timeGuard: false,
-        maximumSongLength: 6000,
+        maximumSongLength: 12000,
 		announceMehs: true,
         skipSound5Days: false,
         skipSound7Days: false,
