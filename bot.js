@@ -5837,7 +5837,7 @@ var CONST = {
   blacklistLink: "https://rawgit.com/SZigmund/basicBot/master/Blacklist/list.json",
   userlistLink: "https://rawgit.com/SZigmund/basicBot/master/Blacklist/users.json",
   blacklistIdLink: "https://rawgit.com/SZigmund/basicBot/master/Blacklist/ids.json",
-  cmdLink: "http://pastebin.com/4D706TnS7",
+  cmdLink: "http://pastebin.com/4D706TnS",
   RGT_ROOM: "5602ed62e8632103004663c2",
   TASTY_ROOM: "5600a564bfb6340300a2def2",
   commandLiteral: ".",
