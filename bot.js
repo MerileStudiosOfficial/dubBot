@@ -7102,7 +7102,7 @@ var BOTCOMMANDS = {
                 }
             },
             announcemehsCommand: {
-                command: 'maxlength',
+                command: 'announcemehs',
                 rank: 'manager',
                 type: 'startsWith',
                 functionality: function (chat, cmd) {
