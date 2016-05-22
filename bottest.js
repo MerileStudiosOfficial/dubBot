@@ -7321,6 +7321,29 @@ var BOTCOMMANDS = {
                     }
                 }
             },
+            
+            voteskipCommand: {
+                command: 'voteskip',
+                rank: 'manager',
+                type: 'startsWith',
+                functionality: function (chat, cmd) {
+                    if (this.type === 'exact' && chat.message.length !== cmd.length) return void (0);
+                    if (!BOTCOMMANDS.commands.executable(this.rank, chat)) return void (0);
+                    else {
+                        var msg = chat.message;
+                        if (msg.length <= cmd.length + 1) return API.sendChat(botChat.subChat(botChat.getChatMessage("voteskiplimit"), {name: chat.un, limit: SETTINGS.settings.voteSkipLimit}));
+                        var argument = msg.substring(cmd.length + 1);
+                        if (!SETTINGS.settings.voteSkipEnabled) SETTINGS.settings.voteSkipEnabled = SETTINGS.settings.voteSkipEnabled;
+                        if (isNaN(argument)) {
+                            API.sendChat(botChat.subChat(botChat.getChatMessage("voteskipinvalidlimit"), {name: chat.un}));
+                        }
+                        else {
+                            SETTINGS.settings.voteSkipLimit = argument;
+                            API.sendChat(botChat.subChat(botChat.getChatMessage("voteskipsetlimit"), {name: chat.un, limit: SETTINGS.settings.voteSkipLimit}));
+                        }
+                    }
+                }
+            },
             /* basic
             activeCommand: {
                 command: 'active',
