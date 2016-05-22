@@ -1189,6 +1189,7 @@ var botChat = {
    //botChat.chatMessages.push(["songstatisticstasty", "[ :thumbsup: %%WOOTS%% :heart: %%GRABS%% :thumbsdown: %%MEHS%% :cake: %%TASTY%%] %%USER%% [%%ARTIST%% - %%TITLE%%]"]);
    botChat.chatMessages.push(["eightballquestion", "%%NAME%% asked [%%QUESTION%%]. Bot-sama says [%%RESPONSE%%]"]);
    botChat.chatMessages.push(["eightballresponse1", "%%NAME%% asked [%%QUESTION%%]. Bot-sama says [%%RESPONSE%%]"]);
+   botChat.chatMessages.push(["speakcommand", "[%%SPEAK%%]"]);
    //botChat.chatMessages.push(["eightballresponse1", "The all knowing Larry says: %%RESPONSE%%"]);
    botChat.chatMessages.push(["eightballresponse2", "%%NAME%% The all knowing Larry says: %%RESPONSE%%"]);
    botChat.chatMessages.push(["lastplayed0", ":notes: This is the 1st time this song has been played! :notes:"]);
@@ -6244,7 +6245,7 @@ var BOTCOMMANDS = {
                         //Since we don't delete comments yet repeating the question is pointless.
                         //API.sendChat(botChat.subChat(botChat.getChatMessage("eightballquestion"), {name: chat.un, question: myQuestion}));
                         //setTimeout(function () {
-                            API.sendChat(botChat.subChat(botChat.getChatMessage("eightballresponse1"), {response: magicResponse}));
+                            API.sendChat(botChat.subChat(botChat.getChatMessage("eightballresponse1"), {name: chat.un, question: myQuestion, response: magicResponse}));
                         //}, 500);
                     }
                     catch(err) {
@@ -6308,6 +6309,17 @@ var BOTCOMMANDS = {
                     else {
                         API.wootThisSong();
                     }
+                }
+            },
+            
+            sayCommand: {   //Added 04/01/2015 Zig
+                command: 'say',
+                rank: 'co-owner',
+                type: 'startsWith',
+                functionality: function (chat, cmd) {
+                    var msg = chat.message;
+                    var SpeakSrc = msg.substring(cmd.length + 1);
+                    API.sendChat(botChat.subChat(botChat.getChatMessage("speakcommand"), {speak: SpeakSrc}));
                 }
             },
             mehCommand: {
