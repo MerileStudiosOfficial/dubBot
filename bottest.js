@@ -7302,39 +7302,25 @@ var BOTCOMMANDS = {
                 }
             },
             
-             moveCommand: {
-                command: 'move',
-                rank: 'manager',
-                type: 'startsWith',
+            togglevoteskipCommand: {
+                command: 'togglevoteskip',
+                rank: 'mod',
+                type: 'exact',
                 functionality: function (chat, cmd) {
                     if (this.type === 'exact' && chat.message.length !== cmd.length) return void (0);
                     if (!BOTCOMMANDS.commands.executable(this.rank, chat)) return void (0);
                     else {
-                        var msg = chat.message;
-                        if (msg.length === cmd.length) return API.sendChat(botChat.subChat(botChat.getChatMessage("nouserspecified"), {name: chat.un}));
-                        var firstSpace = msg.indexOf(' ');
-                        var lastSpace = msg.lastIndexOf(' ');
-                        var pos;
-                        var name;
-                        if (isNaN(parseInt(msg.substring(lastSpace + 1)))) {
-                            pos = 1;
-                            name = msg.substring(cmd.length + 2);
+                        if (SETTINGS.settings.voteSkipEnabled) {
+                            SETTINGS.settings.voteSkipEnabled = !SETTINGS.settings.voteSkipEnabled;
+                            API.sendChat(botChat.subChat(botChat.getChatMessage("toggleoff"), {name: chat.un, 'function': botChat.getChatMessage("voteskip")}));
                         }
                         else {
-                            pos = parseInt(msg.substring(lastSpace + 1));
-                            name = msg.substring(cmd.length + 2, lastSpace);
+                            SETTINGS.settings.voteSkipEnabled = !SETTINGS.settings.voteSkipEnabled;
+                            API.sendChat(botChat.subChat(botChat.getChatMessage("toggleon"), {name: chat.un, 'function': botChat.getChatMessage("voteskip")}));
                         }
-                        var user = USERS.lookupUserName(name);
-                        if (typeof user === 'boolean') return API.sendChat(botChat.subChat(botChat.getChatMessage("invaliduserspecified"), {name: chat.un}));
-                        if (user.id === botVar.botID) return API.sendChat(botChat.subChat(botChat.getChatMessage("addbotwaitlist"), {name: chat.un}));
-                        if (!isNaN(pos)) {
-                            API.sendChat(botChat.subChat(botChat.getChatMessage("move"), {name: chat.un}));
-                            API.moderateMoveDJ(user.id, pos, waitlist); // wont work need djlist
-                        } else return API.sendChat(botChat.subChat(botChat.getChatMessage("invalidpositionspecified"), {name: chat.un}));
                     }
                 }
             },
-
             /* basic
             activeCommand: {
                 command: 'active',
@@ -7363,7 +7349,25 @@ var BOTCOMMANDS = {
                     }
                 }
             },
-
+            togglevoteskipCommand: {
+                command: 'togglevoteskip',
+                rank: 'mod',
+                type: 'exact',
+                functionality: function (chat, cmd) {
+                    if (this.type === 'exact' && chat.message.length !== cmd.length) return void (0);
+                    if (!BOTCOMMANDS.commands.executable(this.rank, chat)) return void (0);
+                    else {
+                        if (botVar.room.voteSkipEnabled) {
+                            botVar.room.voteSkipEnabled = !botVar.room.voteSkipEnabled;
+                            API.sendChat(botChat.subChat(botChat.getChatMessage("toggleoff"), {name: chat.un, 'function': botChat.getChatMessage("voteskip")}));
+                        }
+                        else {
+                            botVar.room.voteSkipEnabled = !botVar.room.voteSkipEnabled;
+                            API.sendChat(botChat.subChat(botChat.getChatMessage("toggleon"), {name: chat.un, 'function': botChat.getChatMessage("voteskip")}));
+                        }
+                    }
+                }
+            },
             unbanCommand: {
                 command: 'unban',
                 rank: 'mod',
