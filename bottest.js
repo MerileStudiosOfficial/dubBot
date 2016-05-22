@@ -7310,12 +7310,12 @@ var BOTCOMMANDS = {
                     if (this.type === 'exact' && chat.message.length !== cmd.length) return void (0);
                     if (!BOTCOMMANDS.commands.executable(this.rank, chat)) return void (0);
                     else {
-                        if (SETTINGS.settings.voteSkipEnabled) {
-                            SETTINGS.settings.voteSkipEnabled = !SETTINGS.settings.voteSkipEnabled;
+                        if (botVar.room.voteSkipEnabled) {
+                            botVar.room.voteSkipEnabled = !botVar.room.voteSkipEnabled;
                             API.sendChat(botChat.subChat(botChat.getChatMessage("toggleoff"), {name: chat.un, 'function': botChat.getChatMessage("voteskip")}));
                         }
                         else {
-                            SETTINGS.settings.voteSkipEnabled = !SETTINGS.settings.voteSkipEnabled;
+                           botVar.room.voteSkipEnabled = !botVar.room.voteSkipEnabled;
                             API.sendChat(botChat.subChat(botChat.getChatMessage("toggleon"), {name: chat.un, 'function': botChat.getChatMessage("voteskip")}));
                         }
                     }
@@ -7331,15 +7331,15 @@ var BOTCOMMANDS = {
                     if (!BOTCOMMANDS.commands.executable(this.rank, chat)) return void (0);
                     else {
                         var msg = chat.message;
-                        if (msg.length <= cmd.length + 1) return API.sendChat(botChat.subChat(botChat.getChatMessage("voteskiplimit"), {name: chat.un, limit: SETTINGS.settings.voteSkipLimit}));
+                        if (msg.length <= cmd.length + 1) return API.sendChat(botChat.subChat(botChat.getChatMessage("voteskiplimit"), {name: chat.un, limit: botVar.room.voteSkipLimit}));
                         var argument = msg.substring(cmd.length + 1);
-                        if (!SETTINGS.settings.voteSkipEnabled) SETTINGS.settings.voteSkipEnabled = SETTINGS.settings.voteSkipEnabled;
+                        if (!botVar.room.voteSkipEnabled) botVar.room.voteSkipEnabled = botVar.room.voteSkipEnabled;
                         if (isNaN(argument)) {
                             API.sendChat(botChat.subChat(botChat.getChatMessage("voteskipinvalidlimit"), {name: chat.un}));
                         }
                         else {
-                            SETTINGS.settings.voteSkipLimit = argument;
-                            API.sendChat(botChat.subChat(botChat.getChatMessage("voteskipsetlimit"), {name: chat.un, limit: SETTINGS.settings.voteSkipLimit}));
+                            botVar.room.voteSkipLimit = argument;
+                            API.sendChat(botChat.subChat(botChat.getChatMessage("voteskipsetlimit"), {name: chat.un, limit: botVar.room.voteSkipLimit}));
                         }
                     }
                 }
