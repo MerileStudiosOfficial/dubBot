@@ -7344,6 +7344,39 @@ var BOTCOMMANDS = {
                     }
                 }
             },
+            
+             moveCommand: {
+                command: 'move',
+                rank: 'manager',
+                type: 'startsWith',
+                functionality: function (chat, cmd) {
+                    if (this.type === 'exact' && chat.message.length !== cmd.length) return void (0);
+                    if (!BOTCOMMANDS.commands.executable(this.rank, chat)) return void (0);
+                    else {
+                        var msg = chat.message;
+                        if (msg.length === cmd.length) return API.sendChat(botChat.subChat(botChat.getChatMessage("nouserspecified"), {name: chat.un}));
+                        var firstSpace = msg.indexOf(' ');
+                        var lastSpace = msg.lastIndexOf(' ');
+                        var pos;
+                        var name;
+                        if (isNaN(parseInt(msg.substring(lastSpace + 1)))) {
+                            pos = 1;
+                            name = msg.substring(cmd.length + 2);
+                        }
+                        else {
+                            pos = parseInt(msg.substring(lastSpace + 1));
+                            name = msg.substring(cmd.length + 2, lastSpace);
+                        }
+                        var user = USERS.lookupUserName(name);
+                        if (typeof user === 'boolean') return API.sendChat(botChat.subChat(botChat.getChatMessage("invaliduserspecified"), {name: chat.un}));
+                        if (user.id === botVar.botID) return API.sendChat(botChat.subChat(botChat.getChatMessage("addbotwaitlist"), {name: chat.un}));
+                        if (!isNaN(pos)) {
+                            API.sendChat(botChat.subChat(botChat.getChatMessage("move"), {name: chat.un}));
+                            API.moderateMoveDJ(user.id, pos, null); // wont work need djlist
+                        } else return API.sendChat(botChat.subChat(botChat.getChatMessage("invalidpositionspecified"), {name: chat.un}));
+                    }
+                }
+            },
             /* basic
             activeCommand: {
                 command: 'active',
