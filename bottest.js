@@ -7372,7 +7372,7 @@ var BOTCOMMANDS = {
                         if (user.id === botVar.botID) return API.sendChat(botChat.subChat(botChat.getChatMessage("addbotwaitlist"), {name: chat.un}));
                         if (!isNaN(pos)) {
                             API.sendChat(botChat.subChat(botChat.getChatMessage("move"), {name: chat.un}));
-                            API.moderateMoveDJ(user.id, pos, null); // wont work need djlist
+                            API.moderateMoveDJ(user.id, pos, waitlist); // wont work need djlist
                         } else return API.sendChat(botChat.subChat(botChat.getChatMessage("invalidpositionspecified"), {name: chat.un}));
                     }
                 }
