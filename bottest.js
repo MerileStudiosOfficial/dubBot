@@ -1189,7 +1189,7 @@ var botChat = {
    //botChat.chatMessages.push(["songstatisticstasty", "[ :thumbsup: %%WOOTS%% :heart: %%GRABS%% :thumbsdown: %%MEHS%% :cake: %%TASTY%%] %%USER%% [%%ARTIST%% - %%TITLE%%]"]);
    botChat.chatMessages.push(["eightballquestion", "%%NAME%% asked [%%QUESTION%%]. Bot-sama says [%%RESPONSE%%]"]);
    botChat.chatMessages.push(["eightballresponse1", "%%NAME%% asked [%%QUESTION%%]. Bot-sama says [%%RESPONSE%%]"]);
-   botChat.chatMessages.push(["speakcommand", "[%%SPEAK%%]"]);
+   botChat.chatMessages.push(["speakcommand", "%%SPEAK%%"]);
    //botChat.chatMessages.push(["eightballresponse1", "The all knowing Larry says: %%RESPONSE%%"]);
    botChat.chatMessages.push(["eightballresponse2", "%%NAME%% The all knowing Larry says: %%RESPONSE%%"]);
    botChat.chatMessages.push(["lastplayed0", ":notes: This is the 1st time this song has been played! :notes:"]);
