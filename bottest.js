@@ -1187,8 +1187,8 @@ var botChat = {
    botChat.chatMessages.push(["tastyvote", "[%%NAME%%  gave you a fake point for this tasty tune :cake:]"]);
    botChat.chatMessages.push(["songstatisticstasty", "[ :thumbsup: %%WOOTS%% :heart: %%GRABS%% :thumbsdown: %%MEHS%% :cake: %%TASTY%%] %%USER%% [%%SONG%%]"]);
    //botChat.chatMessages.push(["songstatisticstasty", "[ :thumbsup: %%WOOTS%% :heart: %%GRABS%% :thumbsdown: %%MEHS%% :cake: %%TASTY%%] %%USER%% [%%ARTIST%% - %%TITLE%%]"]);
-   botChat.chatMessages.push(["eightballquestion", "%%NAME%% Question: [%%QUESTION%%]"]);
-   botChat.chatMessages.push(["eightballresponse1", "%%RESPONSE%%"]);
+   botChat.chatMessages.push(["eightballquestion", "%%NAME%% asked [%%QUESTION%%]. Bot-sama says [%%RESPONSE%%]"]);
+   botChat.chatMessages.push(["eightballresponse1", "%%NAME%% asked [%%QUESTION%%]. Bot-sama says [%%RESPONSE%%]"]);
    //botChat.chatMessages.push(["eightballresponse1", "The all knowing Larry says: %%RESPONSE%%"]);
    botChat.chatMessages.push(["eightballresponse2", "%%NAME%% The all knowing Larry says: %%RESPONSE%%"]);
    botChat.chatMessages.push(["lastplayed0", ":notes: This is the 1st time this song has been played! :notes:"]);
