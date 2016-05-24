@@ -1166,7 +1166,7 @@ var botChat = {
    botChat.chatMessages.push(["reload", "Be right back."]);
    botChat.chatMessages.push(["removenotinwl", "[@%%NAME%%] Specified user @%%USERNAME%% is not in the waitlist."]);
    botChat.chatMessages.push(["roomrules", "Check out all of our rules: %%LINK%% also type .upgrades for more info on ranks."]);
-   botChat.chatMessages.push(["roomupgrades", "Upgrades are given based on the amount of dubs associated with your dubtrack account for more info click here : %%LINK%%"]);
+   botChat.chatMessages.push(["roomupgrades", "Upgrades are given based on the amount of dubs : %%LINK%%"]);
    botChat.chatMessages.push(["roomnoup", "%%LINK%%"]);
    botChat.chatMessages.push(["sessionstats", "[@%%NAME%%] Total woots: %%WOOTS%%, total mehs: %%MEHS%%, total grabs: %%GRABS%%."]);
    botChat.chatMessages.push(["skip", "[%%NAME%% used skip.]"]);
