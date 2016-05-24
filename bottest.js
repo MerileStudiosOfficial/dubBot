@@ -7441,7 +7441,6 @@ var BOTCOMMANDS = {
                                     { 
                                         "format": "json",
                                         "api_key": api_key,
-                                        "rating": rating,
                                         "tag": fixedtag
                                     },
                                     function(response)
@@ -7471,7 +7470,6 @@ var BOTCOMMANDS = {
                                     { 
                                         "format": "json",
                                         "api_key": api_key,
-                                        "rating": rating
                                     },
                                     function(response)
                                     {
@@ -7480,7 +7478,6 @@ var BOTCOMMANDS = {
                                     )
                             }
                             var api_key = "dc6zaTOxFJmzC"; // public beta key
-                            var rating = "pg-13"; // PG 13 gifs
                             get_random_id(api_key, function(id) {
                                 if (typeof id !== 'undefined') {
                                     API.sendChat(botChat.subChat(botChat.getChatMessage("validgifrandom"), {name: chat.un, id: id}));
