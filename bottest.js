@@ -735,9 +735,11 @@ var SETTINGS = {
         etaRestriction: false,
         welcome: true,
         opLink: null,
-        rulesLink: "http://tinyurl.com/TastyTunesRules",
+        rulesLink: "http://pastebin.com/JC309UC1",
+        upgradeLink: "http://pastebin.com/vGihUTVn",
+        noupLink: "http://pastebin.com/0yb5Rctz",
         themeLink: null,
-        fbLink: "https://www.facebook.com/groups/226222424234128/",
+        fbLink: "facebook is for niggers",
         youtubeLink: null,
         website: null,
         intervalMessages: [],
@@ -1163,7 +1165,9 @@ var botChat = {
    botChat.chatMessages.push(["pong", "Pong!"]);
    botChat.chatMessages.push(["reload", "Be right back."]);
    botChat.chatMessages.push(["removenotinwl", "[@%%NAME%%] Specified user @%%USERNAME%% is not in the waitlist."]);
-   botChat.chatMessages.push(["roomrules", "This is an English speaking community for English speaking music. We play a wide variety of music. Please avoid Dubstep, EDM, Mashups, and children music. Check out all of our rules: %%LINK%%"]);
+   botChat.chatMessages.push(["roomrules", "Check out all of our rules: %%LINK%% also type .upgrades for more info on ranks."]);
+   botChat.chatMessages.push(["roomupgrades", "Upgrades are given based on the amount of dubs associated with your dubtrack account for more info click here : %%LINK%%"]);
+   botChat.chatMessages.push(["roomnoup", "%%LINK%%"]);
    botChat.chatMessages.push(["sessionstats", "[@%%NAME%%] Total woots: %%WOOTS%%, total mehs: %%MEHS%%, total grabs: %%GRABS%%."]);
    botChat.chatMessages.push(["skip", "[%%NAME%% used skip.]"]);
    botChat.chatMessages.push(["madeby", "This bot was made by %%NAME%%."]);
@@ -6820,6 +6824,32 @@ var BOTCOMMANDS = {
                     else {
                         if (typeof SETTINGS.settings.rulesLink === "string")
                             return API.sendChat(botChat.subChat(botChat.getChatMessage("roomrules"), {link: SETTINGS.settings.rulesLink}));
+                    }
+                }
+            },
+            upgradeCommand: {
+                command: 'upgrades',
+                rank: 'user',
+                type: 'exact',
+                functionality: function (chat, cmd) {
+                    if (this.type === 'exact' && chat.message.length !== cmd.length) return void (0);
+                    if (!BOTCOMMANDS.commands.executable(this.rank, chat)) return void (0);
+                    else {
+                        if (typeof SETTINGS.settings.rulesLink === "string")
+                            return API.sendChat(botChat.subChat(botChat.getChatMessage("roomupgrades"), {link: SETTINGS.settings.upgradeLink}));
+                    }
+                }
+            },
+         upgradeCommand: {
+                command: 'nouplist',
+                rank: 'user',
+                type: 'exact',
+                functionality: function (chat, cmd) {
+                    if (this.type === 'exact' && chat.message.length !== cmd.length) return void (0);
+                    if (!BOTCOMMANDS.commands.executable(this.rank, chat)) return void (0);
+                    else {
+                        if (typeof SETTINGS.settings.rulesLink === "string")
+                            return API.sendChat(botChat.subChat(botChat.getChatMessage("roomnoup"), {link: SETTINGS.settings.noupLink}));
                     }
                 }
             },
