@@ -7437,7 +7437,7 @@ var BOTCOMMANDS = {
                             {
                                 // Old URL: "https://api.giphy.com/v1/gifs/random?", 
                                 $.getJSON(
-                                    "https://tv.giphy.com/v1/gifs/random?", 
+                                    "https://tv.giphy.com/v1/gifs/search?", 
                                     { 
                                         "format": "json",
                                         "api_key": api_key,
@@ -7467,7 +7467,7 @@ var BOTCOMMANDS = {
                             function get_random_id(api_key, func)
                             {
                                 $.getJSON(
-                                    "https://api.giphy.com/v1/gifs/random?", 
+                                    "https://api.giphy.com/v1/gifs/search?", 
                                     { 
                                         "format": "json",
                                         "api_key": api_key,
