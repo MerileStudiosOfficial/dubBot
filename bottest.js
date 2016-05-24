@@ -6840,7 +6840,7 @@ var BOTCOMMANDS = {
                     }
                 }
             },
-         upgradeCommand: {
+           noupCommand: {
                 command: 'nouplist',
                 rank: 'user',
                 type: 'exact',
