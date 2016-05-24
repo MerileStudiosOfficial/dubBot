@@ -6822,8 +6822,7 @@ var BOTCOMMANDS = {
                     if (this.type === 'exact' && chat.message.length !== cmd.length) return void (0);
                     if (!BOTCOMMANDS.commands.executable(this.rank, chat)) return void (0);
                     else {
-                        if (typeof SETTINGS.settings.rulesLink === "string")
-                            return API.sendChat(botChat.subChat(botChat.getChatMessage("roomrules"), {link: SETTINGS.settings.rulesLink}));
+                            return API.sendChat(botChat.subChat(botChat.getChatMessage("roomrules"), {link: "http://pastebin.com/JC309UC1"}));
                     }
                 }
             },
