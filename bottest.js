@@ -7452,7 +7452,7 @@ var BOTCOMMANDS = {
                         var from = chat.un;
                         var user = USERS.lookupUserID(chat.uid);
                         var perm = API.getPermission(chat.uid);
-                        var dj = API.getDJ().id;
+                        var dj = API.getDJName().id;
                         var isDj = false;
                         if (dj === chat.uid) isDj = true;
                         if (perm >= 1 || isDj) {
