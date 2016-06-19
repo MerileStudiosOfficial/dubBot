@@ -1151,11 +1151,12 @@ var botChat = {
    botChat.chatMessages.push(["lockskippos", "[@%%NAME%%] Lockskip will now move the dj to position %%POSITION%%."]);
    botChat.chatMessages.push(["lockguardtime", "[@%%NAME%%] The lockguard is set to %%TIME%% minute(s)."]);
    botChat.chatMessages.push(["maxlengthtime", "[@%%NAME%%] The maximum song duration is set to %%TIME%% seconds."]);
+   botChat.chatMessages.push(["timeguardstat", "[@%%NAME%%] Timeguard is set to %%TIME%%"]);
    botChat.chatMessages.push(["invalidvalue", "[@%%NAME%%] Invalid value for this command."]);
    botChat.chatMessages.push(["motdset", "MotD set to:  %%MSG%%"]);
    botChat.chatMessages.push(["motdintervalset", "MotD interval set to %%INTERVAL%%."]);
    botChat.chatMessages.push(["addbotwaitlist", "@%%NAME%% don't try to add me to the waitlist, please."]);
-   botChat.chatMessages.push(["move", "[%%NAME%% used move.]"]);
+   botChat.chatMessages.push(["move", "[%%NAME%% used move. this doesnt work :( ]"]);
    botChat.chatMessages.push(["mutednotime", "[@%%NAME%%] Muted @%%USERNAME%%."]);
    botChat.chatMessages.push(["mutedmaxtime", "[@%%NAME%%] You can only mute for maximum %%TIME%% minutes."]);
    botChat.chatMessages.push(["mutedtime", "[@%%NAME%%] Muted @%%USERNAME%% for %%TIME%% minutes."]);
@@ -1458,7 +1459,8 @@ var EIGHTBALL = {
     "Sure F*cking thing",
     "F*cking Right",
     "Signs point to F*cking Yes",
-    "It is F*cking certain"
+    "It is F*cking certain",
+    "When Omnipotent kills himself"
     ]
 };
 
