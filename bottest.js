@@ -7452,7 +7452,7 @@ var BOTCOMMANDS = {
                         var from = chat.un;
                         var user = USERS.lookupUserID(chat.uid);
                         var perm = API.getPermission(chat.uid);
-                        var dj = API.getDJName("F").id;
+                        var dj = API.getDJ().id;
                         var isDj = false;
                         if (dj === chat.uid) isDj = true;
                         if (perm >= 1 || isDj) {
@@ -7467,6 +7467,66 @@ var BOTCOMMANDS = {
                             }
                         }
                     }
+                }
+            },
+            zigunbanCommand: {
+                command: 'unban',
+                rank: 'mod',
+                type: 'startsWith',
+                functionality: function (chat, cmd) {
+                    if (this.type === 'exact' && chat.message.length !== cmd.length) return void (0);
+                    if (!BOTCOMMANDS.commands.executable(this.rank, chat)) return void (0);
+                    else {
+                        $(".icon-population").click();
+                        $(".icon-ban").click();
+                        setTimeout(function (chat) {
+                            var msg = chat.message;
+                            if (msg.length === cmd.length) return API.sendChat();
+                            var name = msg.substring(cmd.length + 2);
+                            var bannedUsers = API.getBannedUsers();
+                            var found = false;
+                            var bannedUser = null;
+                            for (var i = 0; i < bannedUsers.length; i++) {
+                                var user = bannedUsers[i];
+                                if (user.username === name) {
+                                    bannedUser = user;
+                                    found = true;
+                                }
+                            }
+                            if (!found) {
+                                $(".icon-chat").click();
+                                return API.sendChat(botChat.subChat(botChat.getChatMessage("notbanned"), {name: chat.un}));
+                            }
+                            //API.moderateUnbanUser(bannedUser.id);
+                            botDebug.debugMessage(true, "Unbanned: " + name);
+                            botDebug.debugMessage(true, "Unban ID: " + bannedUser.id);
+                            setTimeout(function () {
+                                $(".icon-chat").click();
+                            }, 1000);
+                        }, 1000, chat);
+                    }
+                }
+            },
+             zigbanCommand: {
+                command: 'ban',
+                rank: 'mod',
+                type: 'startsWith',
+                functionality: function (chat, cmd) {
+                    if (this.type === 'exact' && chat.message.length !== cmd.length) return void (0);
+                    if (!BOTCOMMANDS.commands.executable(this.rank, chat)) return void (0);
+                    var msg = chat.message;
+                    if (msg.length === cmd.length) return API.sendChat(botChat.subChat(botChat.getChatMessage("nouserspecified"), {name: chat.un}));
+                    var bootid = msg.substr(cmd.length + 1);
+                    if (isNaN(bootid)) return API.sendChat("Invalid ID");
+                    $(".icon-population").click();
+                    $(".icon-ban").click();
+                    setTimeout(function (bootid) {
+                        botDebug.debugMessage(true, "Boot ID: " + bootid);
+                        //API.moderateBanUser(bootid, 1, API.BAN.PERMA);
+                        setTimeout(function () {
+                            $(".icon-chat").click();
+                        }, 1000);
+                    }, 1000);
                 }
             },
             /* basic
@@ -7497,25 +7557,7 @@ var BOTCOMMANDS = {
                     }
                 }
             },
-            togglevoteskipCommand: {
-                command: 'togglevoteskip',
-                rank: 'mod',
-                type: 'exact',
-                functionality: function (chat, cmd) {
-                    if (this.type === 'exact' && chat.message.length !== cmd.length) return void (0);
-                    if (!BOTCOMMANDS.commands.executable(this.rank, chat)) return void (0);
-                    else {
-                        if (botVar.room.voteSkipEnabled) {
-                            botVar.room.voteSkipEnabled = !botVar.room.voteSkipEnabled;
-                            API.sendChat(botChat.subChat(botChat.getChatMessage("toggleoff"), {name: chat.un, 'function': botChat.getChatMessage("voteskip")}));
-                        }
-                        else {
-                            botVar.room.voteSkipEnabled = !botVar.room.voteSkipEnabled;
-                            API.sendChat(botChat.subChat(botChat.getChatMessage("toggleon"), {name: chat.un, 'function': botChat.getChatMessage("voteskip")}));
-                        }
-                    }
-                }
-            },
+      
             unbanCommand: {
                 command: 'unban',
                 rank: 'mod',
