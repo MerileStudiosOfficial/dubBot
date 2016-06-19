@@ -1020,6 +1020,7 @@ var botChat = {
    botChat.chatMessages.push(["online", " %%BOTNAME%% %%VERSION%% online!"]);
 
    botChat.chatMessages.push(["validgiftags", " [@%%NAME%%] http://media.giphy.com/media/%%ID%%/giphy.gif [Tags: %%TAGS%%]"]);
+   botChat.chatMessages.push(["gifcmd", " [@%%NAME%%] the gif command wont work because the bot's creator cant figure out a way to implement the Giphy API im terrible sorry :("]);
    botChat.chatMessages.push(["invalidgiftags", " [@%%NAME%%] Invalid tags, try something different. [Tags: %%TAGS%%]"]);
    botChat.chatMessages.push(["validgifrandom", " [@%%NAME%%] http://media.giphy.com/media/%%ID%%/giphy.gif [Random GIF]"]);
    botChat.chatMessages.push(["invalidgifrandom", " [@%%NAME%%] Invalid request, try again."]);
@@ -6331,6 +6332,21 @@ var BOTCOMMANDS = {
                     }
                 }
             },
+            
+            gifCommand: {   //Added 04/01/2015 Zig
+                command: 'gif',
+                rank: 'user',
+                type: 'startsWith',
+                functionality: function (chat, cmd) {
+                    if (!BOTCOMMANDS.commands.executable(this.rank, chat)) return void (0);
+                    else {
+                    var msg = chat.message;
+                    var SpeakSrc = msg.substring(cmd.length + 1);
+                    API.sendChat(botChat.subChat(botChat.getChatMessage("gifcmd"), {speak: SpeakSrc}));
+                    }
+                }
+            },
+            
             mehCommand: {
                 command: 'mehthissong',
                 rank: 'manager',
@@ -7158,7 +7174,7 @@ var BOTCOMMANDS = {
 					SETTINGS.settings.announceMehs = !SETTINGS.settings.announceMehs;
 					var settingMsg = "Announcing user mehs has been disabled";
 					if (SETTINGS.settings.announceMehs === true) settingMsg = "Announcing user mehs has been enabled";
-					API.sendChat(botChat.subChat(botChat.getChatMessage("maxlengthtime"), {name: chat.un, time: SETTINGS.settings.announceMehs}));
+					API.sendChat(botChat.subChat(botChat.getChatMessage("timeguardstat"), {name: chat.un, time: SETTINGS.settings.announceMehs}));
                 }
             },
             meetingCommand: {   //Added 03/28/2015 Zig
@@ -7424,68 +7440,31 @@ var BOTCOMMANDS = {
                     }
                 }
             },
-            gifCommand: {
-                command: ['gif', 'giphy'],
-                rank: 'user',
-                type: 'startsWith',
+            linkCommand: {
+                command: 'link',
+                rank: 'dj',
+                type: 'exact',
                 functionality: function (chat, cmd) {
                     if (this.type === 'exact' && chat.message.length !== cmd.length) return void (0);
-                    if (!SETTINGS.settings.gifEnabled) return void (0);
                     if (!BOTCOMMANDS.commands.executable(this.rank, chat)) return void (0);
                     else {
-                        var msg = chat.message;
-                        if (msg.length !== cmd.length) {
-                            function get_id(api_key, fixedtag, func)
-                            {
-                                // Old URL: "https://api.giphy.com/v1/gifs/random?", 
-                                $.getJSON(
-                                    "//api.giphy.com/v1/gifs/random?", 
-                                    { 
-                                        "format": "json",
-                                        "api_key": api_key,
-                                        "tag": fixedtag
-                                    },
-                                    function(response)
-                                    {
-                                        func(response.data.id);
-                                    }
-                                    )
+                        var media = API.getCurrentSong();
+                        var from = chat.un;
+                        var user = USERS.lookupUserID(chat.uid);
+                        var perm = API.getPermission(chat.uid);
+                        var dj = API.getDJ().id;
+                        var isDj = false;
+                        if (dj === chat.uid) isDj = true;
+                        if (perm >= 1 || isDj) {
+                            if (media.format === 1) {
+                                var linkToSong = "https://www.youtube.com/watch?v=" + media.cid;
+                                API.sendChat(botChat.subChat(botChat.getChatMessage("songlink"), {name: from, link: linkToSong}));
                             }
-                            var api_key = "dc6zaTOxFJmzC"; // public beta key
-                            var tag = msg.substr(cmd.length + 1);
-                            var fixedtag = tag.replace(/ /g,"+");
-                            var commatag = tag.replace(/ /g,", ");
-                            get_id(api_key, tag, function(id) {
-                                if (typeof id !== 'undefined') {
-                                    API.sendChat(botChat.subChat(botChat.getChatMessage("validgiftags"), {name: chat.un, id: id, tags: commatag}));
-                                } else {
-                                    API.sendChat(botChat.subChat(botChat.getChatMessage("invalidgiftags"), {name: chat.un, tags: commatag}));
-                                }
-                            });
-                        }
-                        else {
-                            function get_random_id(api_key, func)
-                            {
-                                $.getJSON(
-                                    "//api.giphy.com/v1/gifs/random?", 
-                                    { 
-                                        "format": "json",
-                                        "api_key": api_key,
-                                    },
-                                    function(response)
-                                    {
-                                        func(response.data.id);
-                                    }
-                                    )
+                            if (media.format === 2) {
+                                SC.get('/tracks/' + media.cid, function (sound) {
+                                    API.sendChat(botChat.subChat(botChat.getChatMessage("songlink"), {name: from, link: sound.permalink_url}));
+                                });
                             }
-                            var api_key = "dc6zaTOxFJmzC"; // public beta key
-                            get_random_id(api_key, function(id) {
-                                if (typeof id !== 'undefined') {
-                                    API.sendChat(botChat.subChat(botChat.getChatMessage("validgifrandom"), {name: chat.un, id: id}));
-                                } else {
-                                    API.sendChat(botChat.subChat(botChat.getChatMessage("invalidgifrandom"), {name: chat.un}));
-                                }
-                            });
                         }
                     }
                 }
