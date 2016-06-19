@@ -7439,7 +7439,7 @@ var BOTCOMMANDS = {
                             {
                                 // Old URL: "https://api.giphy.com/v1/gifs/random?", 
                                 $.getJSON(
-                                    "https://api.giphy.com/v1/gifs/search?", 
+                                    "https://api.giphy.com/v1/gifs/random?", 
                                     { 
                                         "format": "json",
                                         "api_key": api_key,
