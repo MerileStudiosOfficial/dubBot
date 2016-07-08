@@ -1193,11 +1193,11 @@ var botChat = {
    botChat.chatMessages.push(["tastyvote", "[%%NAME%%  gave you a fake point for this tasty tune :cake:]"]);
    botChat.chatMessages.push(["songstatisticstasty", "[ :thumbsup: %%WOOTS%% :heart: %%GRABS%% :thumbsdown: %%MEHS%% :cake: %%TASTY%%] %%USER%% [%%SONG%%]"]);
    //botChat.chatMessages.push(["songstatisticstasty", "[ :thumbsup: %%WOOTS%% :heart: %%GRABS%% :thumbsdown: %%MEHS%% :cake: %%TASTY%%] %%USER%% [%%ARTIST%% - %%TITLE%%]"]);
-   botChat.chatMessages.push(["eightballquestion", "%%NAME%% asked [%%QUESTION%%]. Bot-sama says [%%RESPONSE%%]"]);
-   botChat.chatMessages.push(["eightballresponse1", "%%NAME%% asked [%%QUESTION%%]. Bot-sama says [%%RESPONSE%%]"]);
+   botChat.chatMessages.push(["eightballquestion", "%%NAME%% asked [%%QUESTION%%]. Fivey says [%%RESPONSE%%]"]);
+   botChat.chatMessages.push(["eightballresponse1", "%%NAME%% asked [%%QUESTION%%]. Fivey says [%%RESPONSE%%]"]);
    botChat.chatMessages.push(["speakcommand", "%%SPEAK%%"]);
    //botChat.chatMessages.push(["eightballresponse1", "The all knowing Larry says: %%RESPONSE%%"]);
-   botChat.chatMessages.push(["eightballresponse2", "%%NAME%% The all knowing Larry says: %%RESPONSE%%"]);
+   botChat.chatMessages.push(["eightballresponse2", "%%NAME%% The all knowing Fiver says: %%RESPONSE%%"]);
    botChat.chatMessages.push(["lastplayed0", ":notes: This is the 1st time this song has been played! :notes:"]);
    botChat.chatMessages.push(["lastplayed1", ":notes: This song has only been played one other time. [first time: %%LASTPLAYED%% ago] :notes:"]);
    botChat.chatMessages.push(["lastplayed2", ":notes: This song has been played %%PLAYCOUNT%% other times. [first time: %%FIRSTPLAYED%% ago] [last time: %%LASTPLAYED%% ago] :notes:"]);
@@ -3131,17 +3131,19 @@ var AI = {
     chatmsg = chatmsg.replace(/ /g, '');
     chatmsg = chatmsg.replace(/THELAW/g, '');
     chatmsg = chatmsg.replace(/CRAZYBOT/g, '');
-    chatmsg = chatmsg.replace(/FUCKBOT/g, "LARRY");
+    chatmsg = chatmsg.replace(/FIVEY/g, "LARRY");
     chatmsg = chatmsg.replace(/BOTT/g, "LARRY");
     chatmsg = chatmsg.replace(/BOT/g, "LARRY");
     chatmsg = chatmsg.replace(/HOWIS/g, "HOWS");     // Convert 2 words to the contraction
     chatmsg = chatmsg.replace(/YOUARE/g, "YOURE");   // Convert 2 words to the contraction
-    chatmsg = chatmsg.replace(/LARRYIS/g, "LARRYS");
-    chatmsg = chatmsg.replace(/LARRY_THE_LAW/g, "LARRY");
+    chatmsg = chatmsg.replace(/FIVEYIS/g, "LARRYS");
+    chatmsg = chatmsg.replace(/NIGGER/g, "LARRY");
     chatmsg = chatmsg.replace(/IAM/g, "IM");
     botDebug.debugMessage(false, "Larry AI chatmsg: " + chatmsg);
 
     if (chatmsg.indexOf("USUCKLARRY") > -1) fuComment = "You're still sore about the other night %%FU%% :kiss:";
+    if (chatmsg.indexOf("KYSLARRY") > -1) fuComment = "You kys first %%FU%%";
+    if (chatmsg.indexOf("LARRYISASTUPIDNIGGER") > -1) fuComment = "You should get roiight into the noose %%FU%%";
     if (chatmsg.indexOf("DUCKULARRY") > -1) fuComment = UTIL.selectRandomFromArray(CONST.fucomments);
     if (chatmsg.indexOf("DUMBASSLARRY") > -1) fuComment = "I'd slap you, but shit stains. %%FU%%";
     if (chatmsg.indexOf("SHITHEADLARRY") > -1) fuComment = "I could eat a bowl of alphabet soup and shit out a smarter statement than that %%FU%%";
