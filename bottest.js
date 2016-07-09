@@ -3143,7 +3143,7 @@ var AI = {
 
     if (chatmsg.indexOf("USUCKLARRY") > -1) fuComment = "You're still sore about the other night %%FU%% :kiss:";
     if (chatmsg.indexOf("KYSLARRY") > -1) fuComment = "You kys first %%FU%%";
-    if (chatmsg.indexOf("LARRYISASTUPIDNIGGER") > -1) fuComment = "You should get roiight into the noose %%FU%%";
+    if (chatmsg.indexOf("LARRYSASTUPIDNIGGER") > -1) fuComment = "You should get roiight into the noose %%FU%%";
     if (chatmsg.indexOf("DUCKULARRY") > -1) fuComment = UTIL.selectRandomFromArray(CONST.fucomments);
     if (chatmsg.indexOf("DUMBASSLARRY") > -1) fuComment = "I'd slap you, but shit stains. %%FU%%";
     if (chatmsg.indexOf("SHITHEADLARRY") > -1) fuComment = "I could eat a bowl of alphabet soup and shit out a smarter statement than that %%FU%%";
