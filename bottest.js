@@ -1434,7 +1434,7 @@ var EIGHTBALL = {
     "My dog thinks so",
     "Um.. Ok, sure, why not?",
     "Will the sun rise tomorrow?",
-    "Yep, like a bird has feathers",ad
+    "Yep, like a bird has feathers",
     "You can bet your ass on it",
     "Hell No",
     "Are you stupid?",
