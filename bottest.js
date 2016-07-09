@@ -1087,6 +1087,20 @@ var botChat = {
    botChat.chatMessages.push(["afkremoval", "AFK removal"]);
    botChat.chatMessages.push(["afksremoved", "AFK's removed"]);
    botChat.chatMessages.push(["afklimit", "AFK limit"]);
+   botChat.chatMessages.push(["rule1", "@%%USER%% 1.) OBEY THE STAFF"]);
+   botChat.chatMessages.push(["rule2", "@%%USER%% 2.) No asking for mod"]);
+   botChat.chatMessages.push(["rule3", "@%%USER%% 3.) No starting a big argument with anyone about stupid shit (Upgrades, Rules, etc.)"]);
+   botChat.chatMessages.push(["rule4", "@%%USER%% 4.) No Advertising"]);
+   botChat.chatMessages.push(["rule5", "@%%USER%% 5.) Videos under 10 minutes unless stated otherwise"]);
+   botChat.chatMessages.push(["rule6", "@%%USER%% 6.) Earrape kept to a minimal"]);
+   botChat.chatMessages.push(["rule7", "@%%USER%% 7.) No suspicious links"]);
+   botChat.chatMessages.push(["rule8", "@%%USER%% 8.) No overplayed content"]);
+   botChat.chatMessages.push(["rule9", "@%%USER%% 9.) No gore, isis beheadings or generally disgusting videos"]);
+   botChat.chatMessages.push(["rule10", "@%%USER%% 10.) No Off Topic"]);
+   botChat.chatMessages.push(["rule11", "@%%USER%% 11.) No excessive spamming"]);
+   botChat.chatMessages.push(["rule12", "@%%USER%% 12.) NO BAN/MUTE EVADING"]);
+   botChat.chatMessages.push(["rule13", "@%%USER%% 13.) Keep Rucka Rucka Ali"]);
+   botChat.chatMessages.push(["rule14", "@%%USER%% 14.) No abusing the room bot"]);
    botChat.chatMessages.push(["repeatSongs", "Skip History"]);
    botChat.chatMessages.push(["repeatSongLimit", "Skip History limit"]);
    botChat.chatMessages.push(["autoskip", "autoskip"]);
@@ -6331,6 +6345,188 @@ var BOTCOMMANDS = {
                     var msg = chat.message;
                     var SpeakSrc = msg.substring(cmd.length + 1);
                     API.sendChat(botChat.subChat(botChat.getChatMessage("speakcommand"), {speak: SpeakSrc}));
+                    }
+                }
+            },
+           rule1Command: {   //Added 04/01/2015 Zig
+                command: 'rule1',
+                rank: 'user',
+                type: 'startsWith',
+                functionality: function (chat, cmd) {
+                    if (!BOTCOMMANDS.commands.executable(this.rank, chat)) return void (0);
+                    else {
+                    var msg = chat.message;
+                    var SpeakSrc = msg.substring(cmd.length + 1);
+                    API.sendChat(botChat.subChat(botChat.getChatMessage("rule1"), {user: SpeakSrc}));
+                    }
+                }
+            },
+             rule2Command: {   //Added 04/01/2015 Zig
+                command: 'rule2',
+                rank: 'user',
+                type: 'startsWith',
+                functionality: function (chat, cmd) {
+                    if (!BOTCOMMANDS.commands.executable(this.rank, chat)) return void (0);
+                    else {
+                    var msg = chat.message;
+                    var SpeakSrc = msg.substring(cmd.length + 1);
+                    API.sendChat(botChat.subChat(botChat.getChatMessage("rule2"), {user: SpeakSrc}));
+                    }
+                }
+            },
+            rule3Command: {   //Added 04/01/2015 Zig
+                command: 'rule3',
+                rank: 'user',
+                type: 'startsWith',
+                functionality: function (chat, cmd) {
+                    if (!BOTCOMMANDS.commands.executable(this.rank, chat)) return void (0);
+                    else {
+                    var msg = chat.message;
+                    var SpeakSrc = msg.substring(cmd.length + 1);
+                    API.sendChat(botChat.subChat(botChat.getChatMessage("rule3"), {user: SpeakSrc}));
+                    }
+                }
+            },
+            rule4Command: {   //Added 04/01/2015 Zig
+                command: 'rule4',
+                rank: 'user',
+                type: 'startsWith',
+                functionality: function (chat, cmd) {
+                    if (!BOTCOMMANDS.commands.executable(this.rank, chat)) return void (0);
+                    else {
+                    var msg = chat.message;
+                    var SpeakSrc = msg.substring(cmd.length + 1);
+                    API.sendChat(botChat.subChat(botChat.getChatMessage("rule4"), {user: SpeakSrc}));
+                    }
+                }
+            },
+            rule5Command: {   //Added 04/01/2015 Zig
+                command: 'rule5',
+                rank: 'user',
+                type: 'startsWith',
+                functionality: function (chat, cmd) {
+                    if (!BOTCOMMANDS.commands.executable(this.rank, chat)) return void (0);
+                    else {
+                    var msg = chat.message;
+                    var SpeakSrc = msg.substring(cmd.length + 1);
+                    API.sendChat(botChat.subChat(botChat.getChatMessage("rule5"), {user: SpeakSrc}));
+                    }
+                }
+            },
+            rule6Command: {   //Added 04/01/2015 Zig
+                command: 'rule6',
+                rank: 'user',
+                type: 'startsWith',
+                functionality: function (chat, cmd) {
+                    if (!BOTCOMMANDS.commands.executable(this.rank, chat)) return void (0);
+                    else {
+                    var msg = chat.message;
+                    var SpeakSrc = msg.substring(cmd.length + 1);
+                    API.sendChat(botChat.subChat(botChat.getChatMessage("rule6"), {user: SpeakSrc}));
+                    }
+                }
+            },
+            rule7Command: {   //Added 04/01/2015 Zig
+                command: 'rule7',
+                rank: 'user',
+                type: 'startsWith',
+                functionality: function (chat, cmd) {
+                    if (!BOTCOMMANDS.commands.executable(this.rank, chat)) return void (0);
+                    else {
+                    var msg = chat.message;
+                    var SpeakSrc = msg.substring(cmd.length + 1);
+                    API.sendChat(botChat.subChat(botChat.getChatMessage("rule7"), {user: SpeakSrc}));
+                    }
+                }
+            },
+            rule8Command: {   //Added 04/01/2015 Zig
+                command: 'rule8',
+                rank: 'user',
+                type: 'startsWith',
+                functionality: function (chat, cmd) {
+                    if (!BOTCOMMANDS.commands.executable(this.rank, chat)) return void (0);
+                    else {
+                    var msg = chat.message;
+                    var SpeakSrc = msg.substring(cmd.length + 1);
+                    API.sendChat(botChat.subChat(botChat.getChatMessage("rule8"), {user: SpeakSrc}));
+                    }
+                }
+            },
+            rule9Command: {   //Added 04/01/2015 Zig
+                command: 'rule9',
+                rank: 'user',
+                type: 'startsWith',
+                functionality: function (chat, cmd) {
+                    if (!BOTCOMMANDS.commands.executable(this.rank, chat)) return void (0);
+                    else {
+                    var msg = chat.message;
+                    var SpeakSrc = msg.substring(cmd.length + 1);
+                    API.sendChat(botChat.subChat(botChat.getChatMessage("rule9"), {user: SpeakSrc}));
+                    }
+                }
+            },
+            rule10Command: {   //Added 04/01/2015 Zig
+                command: 'rule10',
+                rank: 'user',
+                type: 'startsWith',
+                functionality: function (chat, cmd) {
+                    if (!BOTCOMMANDS.commands.executable(this.rank, chat)) return void (0);
+                    else {
+                    var msg = chat.message;
+                    var SpeakSrc = msg.substring(cmd.length + 1);
+                    API.sendChat(botChat.subChat(botChat.getChatMessage("rule10"), {user: SpeakSrc}));
+                    }
+                }
+            },
+            rule11Command: {   //Added 04/01/2015 Zig
+                command: 'rule11',
+                rank: 'user',
+                type: 'startsWith',
+                functionality: function (chat, cmd) {
+                    if (!BOTCOMMANDS.commands.executable(this.rank, chat)) return void (0);
+                    else {
+                    var msg = chat.message;
+                    var SpeakSrc = msg.substring(cmd.length + 1);
+                    API.sendChat(botChat.subChat(botChat.getChatMessage("rule11"), {user: SpeakSrc}));
+                    }
+                }
+            },
+            rule12Command: {   //Added 04/01/2015 Zig
+                command: 'rule12',
+                rank: 'user',
+                type: 'startsWith',
+                functionality: function (chat, cmd) {
+                    if (!BOTCOMMANDS.commands.executable(this.rank, chat)) return void (0);
+                    else {
+                    var msg = chat.message;
+                    var SpeakSrc = msg.substring(cmd.length + 1);
+                    API.sendChat(botChat.subChat(botChat.getChatMessage("rule12"), {user: SpeakSrc}));
+                    }
+                }
+            },
+            rule13Command: {   //Added 04/01/2015 Zig
+                command: 'rule13',
+                rank: 'user',
+                type: 'startsWith',
+                functionality: function (chat, cmd) {
+                    if (!BOTCOMMANDS.commands.executable(this.rank, chat)) return void (0);
+                    else {
+                    var msg = chat.message;
+                    var SpeakSrc = msg.substring(cmd.length + 1);
+                    API.sendChat(botChat.subChat(botChat.getChatMessage("rule13"), {user: SpeakSrc}));
+                    }
+                }
+            },
+            rule14Command: {   //Added 04/01/2015 Zig
+                command: 'rule14',
+                rank: 'user',
+                type: 'startsWith',
+                functionality: function (chat, cmd) {
+                    if (!BOTCOMMANDS.commands.executable(this.rank, chat)) return void (0);
+                    else {
+                    var msg = chat.message;
+                    var SpeakSrc = msg.substring(cmd.length + 1);
+                    API.sendChat(botChat.subChat(botChat.getChatMessage("rule14"), {user: SpeakSrc}));
                     }
                 }
             },
