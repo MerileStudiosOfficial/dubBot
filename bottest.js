@@ -1267,9 +1267,6 @@ var botChat = {
     });
   },
   
-function userudub() {
-        Dubtrack.Events.bind('realtime:room_playlist-dub', Euserudub);
-}
 function Euserudub(e) {
     if (e.dubtype === "updub") {
                     API.sendChat(botChat.subChat(botChat.getChatMessage("userupvote"), {name: e.user.username}));
@@ -1277,7 +1274,7 @@ function Euserudub(e) {
 }
 
     if (botVar.announcewoots === 'true') {
-        userudub();
+        Dubtrack.Events.bind('realtime:room_playlist-dub', Euserudub);
 }
 
     chatFilter: function (chat) {
