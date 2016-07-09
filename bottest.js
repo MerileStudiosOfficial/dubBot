@@ -1267,9 +1267,7 @@ var botChat = {
     });
   },
   
-function :userudub() {
-        enable('.userudub');
-        storage('userudub', 'true');
+function userudub() {
         Dubtrack.Events.bind('realtime:room_playlist-dub', Euserudub);
 }
 function Euserudub(e) {
