@@ -3161,6 +3161,7 @@ var AI = {
 
     if (chatmsg.indexOf("USUCKLARRY") > -1) fuComment = "You're still sore about the other night %%FU%% :kiss:";
     if (chatmsg.indexOf("KYSLARRY") > -1) fuComment = "You kys first %%FU%%";
+    if (chatmsg.indexOf("LARRY?") > -1) fuComment = "tf you want %%FU%%?";
     if (chatmsg.indexOf("LARRYSASTUPIDNIGGER") > -1) fuComment = "You should get roiight into the noose %%FU%%";
     if (chatmsg.indexOf("DUCKULARRY") > -1) fuComment = UTIL.selectRandomFromArray(CONST.fucomments);
     if (chatmsg.indexOf("DUMBASSLARRY") > -1) fuComment = "I'd slap you, but shit stains. %%FU%%";
@@ -3183,7 +3184,7 @@ var AI = {
     if (chatmsg.indexOf("WATCHYOURBACKLARRY") > -1) fuComment = "I'm scared %%FU%%";
     if (chatmsg.indexOf("SICKOFYOULARRY") > -1) fuComment = "I thought a little girl from Kansas dropped a house on you %%FU%%";
     if (chatmsg.indexOf("IMOVERYOULARRY") > -1) fuComment = "You are a sad, sorry little man and you have my pity %%FU%%";
-    if (chatmsg.indexOf("LARRYSADICK") > -1) fuComment = "People only say that because I have a big one %%FU%%.  Don't be so jealous.";
+    if (chatmsg.indexOf("LARRYSADICK") > -1) fuComment = "You suck dick %%FU%%.";
     if (chatmsg.indexOf("LARRYSADONK") > -1) fuComment = "I’m jealous of people that don’t know you %%FU%%!";
     if (chatmsg.indexOf("LARRYSABITCH") > -1) fuComment = "If ignorance ever goes up to $5 a barrel, I want drilling rights to your head %%FU%%";
     if (chatmsg.indexOf("SHUTYOURMOUTHLARRY") > -1) fuComment = "You should eat some of your makeup so you can be pretty on the inside %%FU%%.";
