@@ -9641,6 +9641,15 @@ if (!window.APIisRunning) {
 } else {
   setTimeout(function () { API.main.initbot(); }, 1000);
 }
+
+userdubs: function() {
+    if (botVar.announcewoots === 'true') {
+        Dubtrack.Events.bind('realtime:room_playlist-dub', Euserudub);
+}
+    if (e.dubtype === "updub") {
+                    API.sendChat(botChat.subChat(botChat.getChatMessage("userupvote"), {name: e.user.username}));
+    }
+}
 // basicBot.chat -> botChat.chatMessages botChat.getChatMessage("
 // dubBot.room. cBot.room.
 //TODO:
@@ -9664,3 +9673,4 @@ if (!window.APIisRunning) {
 // • Skip if > 8 Min
 // • Skip if 4 Mehs
 // • tasty comments too long!
+
