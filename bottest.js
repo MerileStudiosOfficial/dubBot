@@ -349,7 +349,7 @@ var USERS = {
   },
   userLeftRoom: function (roomUser) {
 		try {
-            API.chatLog(roomUser.username + " split");
+                API.sendChat(botChat.subChat(botChat.getChatMessage("userleft"), {leftuser: roomUser.username}));
 			// If user has not been in line for over 10 mins and they leave reset the DC
 			if ((roomUser.lastKnownPosition > 0) && (roomUser.lastSeenInLine !== null)) {
 				AFK.updateDC(roomUser);
@@ -1210,8 +1210,10 @@ var botChat = {
    botChat.chatMessages.push(["eightballquestion", "%%NAME%% asked [%%QUESTION%%]. Fivey says [%%RESPONSE%%]"]);
    botChat.chatMessages.push(["eightballresponse1", "%%NAME%% asked [%%QUESTION%%]. Fivey says [%%RESPONSE%%]"]);
    botChat.chatMessages.push(["speakcommand", "%%SPEAK%%"]);
+   botChat.chatMessages.push(["userleft", "%%LEFTUSER%% has left the room :("]);
+   botChat.chatMessages.push(["userupvote", "%%NAME%% updubbed that song :thumbsup:"]);
    //botChat.chatMessages.push(["eightballresponse1", "The all knowing Larry says: %%RESPONSE%%"]);
-   botChat.chatMessages.push(["eightballresponse2", "%%NAME%% The all knowing Fiver says: %%RESPONSE%%"]);
+   botChat.chatMessages.push(["eightballresponse2", "%%NAME%% The all knowing Fivey says: %%RESPONSE%%"]);
    botChat.chatMessages.push(["lastplayed0", ":notes: This is the 1st time this song has been played! :notes:"]);
    botChat.chatMessages.push(["lastplayed1", ":notes: This song has only been played one other time. [first time: %%LASTPLAYED%% ago] :notes:"]);
    botChat.chatMessages.push(["lastplayed2", ":notes: This song has been played %%PLAYCOUNT%% other times. [first time: %%FIRSTPLAYED%% ago] [last time: %%LASTPLAYED%% ago] :notes:"]);
@@ -1263,6 +1265,17 @@ var botChat = {
         }
     });
   },
+  
+function userudub() {
+        enable('.userudub');
+        storage('userudub', 'true');
+        Dubtrack.Events.bind('realtime:room_playlist-dub', Euserudub);
+}
+function Euserudub(e) {
+    if (e.dubtype === "updub") {
+                    API.sendChat(botChat.subChat(botChat.getChatMessage("userupvote"), {name: e.user.username}));
+    }
+}
     chatFilter: function (chat) {
         var msg = chat.message;
         var perm = API.getPermission(chat.uid);
