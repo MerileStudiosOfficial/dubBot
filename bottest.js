@@ -3137,7 +3137,7 @@ var AI = {
     chatmsg = chatmsg.replace(/HOWIS/g, "HOWS");     // Convert 2 words to the contraction
     chatmsg = chatmsg.replace(/YOUARE/g, "YOURE");   // Convert 2 words to the contraction
     chatmsg = chatmsg.replace(/FIVEYIS/g, "LARRYS");
-    chatmsg = chatmsg.replace(/NIGGER/g, "LARRY");
+    chatmsg = chatmsg.replace(/FIVEYPLZ/g, "LARRY");
     chatmsg = chatmsg.replace(/IAM/g, "IM");
     botDebug.debugMessage(false, "Larry AI chatmsg: " + chatmsg);
 
