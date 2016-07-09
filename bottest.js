@@ -133,7 +133,7 @@ var dubBot = {
   },
   announceSongStats: function(waitlist) {
     try {
-	  if (waitlist.length > 0) dubBot.queue.songStatsMessage += " [Next DJ: " + waitlist[0].username + "]";
+	  if (waitlist.length > 0) dubBot.queue.songStatsMessage += " [Next DJ: @" + waitlist[0].username + "]";
 	  if (SETTINGS.settings.suppressSongStats === false) API.sendChat(dubBot.queue.songStatsMessage);
 	  AFK.dclookupCheckAll(waitlist);
 	  dubBot.updateWaitlist(waitlist);
@@ -7646,7 +7646,7 @@ var BOTCOMMANDS = {
                     if (this.type === 'exact' && chat.message.length !== cmd.length) return void (0);
                     if (!BOTCOMMANDS.commands.executable(this.rank, chat)) return void (0);
                     else {
-                        var media = API.getCurrentSong();
+                        var media = Dubtrack.room.player.activeSong;
                         var from = chat.un;
                         var user = USERS.lookupUserID(chat.uid);
                         var perm = API.getPermission(chat.uid);
