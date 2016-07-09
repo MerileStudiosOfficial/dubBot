@@ -25,6 +25,7 @@ var botVar = {
   currentSong: "",
   lastSkippedSong: "",
   tastyCount: 0,
+  announcewoots: true,
   previousSong: "",
   previousStats: "",
   songStats: {
@@ -1276,6 +1277,11 @@ function Euserudub(e) {
                     API.sendChat(botChat.subChat(botChat.getChatMessage("userupvote"), {name: e.user.username}));
     }
 }
+
+    if (botVar.announcewoots === 'true') {
+        userudub();
+}
+
     chatFilter: function (chat) {
         var msg = chat.message;
         var perm = API.getPermission(chat.uid);
