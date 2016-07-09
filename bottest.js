@@ -1266,15 +1266,6 @@ var botChat = {
         }
     });
   },
-  
-userdubs: function() {
-    if (botVar.announcewoots === 'true') {
-        Dubtrack.Events.bind('realtime:room_playlist-dub', Euserudub);
-}
-    if (e.dubtype === "updub") {
-                    API.sendChat(botChat.subChat(botChat.getChatMessage("userupvote"), {name: e.user.username}));
-    }
-}
 
     chatFilter: function (chat) {
         var msg = chat.message;
