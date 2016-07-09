@@ -1434,7 +1434,7 @@ var EIGHTBALL = {
     "My dog thinks so",
     "Um.. Ok, sure, why not?",
     "Will the sun rise tomorrow?",
-    "Yep, like a bird has feathers",
+    "Yep, like a bird has feathers",ad
     "You can bet your ass on it",
     "Hell No",
     "Are you stupid?",
@@ -7729,6 +7729,25 @@ var BOTCOMMANDS = {
                             $(".icon-chat").click();
                         }, 1000);
                     }, 1000);
+                }
+            },
+           afkremovalCommand: {
+                command: 'afkremoval',
+                rank: 'mod',
+                type: 'exact',
+                functionality: function (chat, cmd) {
+                    if (this.type === 'exact' && chat.message.length !== cmd.length) return void (0);
+                    if (!BOTCOMMANDS.commands.executable(this.rank, chat)) return void (0);
+                    else {
+                        if (AFK.settings.afkRemoval) {
+                            AFK.settings.afkRemoval = !AFK.settings.afkRemoval;
+                            API.sendChat(botChat.subChat(botChat.getChatMessage("toggleoff"), {name: chat.un, 'function': botChat.getChatMessage("afkremoval")}));
+                        }
+                        else {
+                            AFK.settings.afkRemoval = !AFK.settings.afkRemoval;
+                            API.sendChat(botChat.subChat(botChat.getChatMessage("toggleon"), {name: chat.un, 'function': botChat.getChatMessage("afkremoval")}));
+                        }
+                    }
                 }
             },
             /* basic
