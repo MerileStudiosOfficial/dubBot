@@ -1212,7 +1212,7 @@ var botChat = {
    botChat.chatMessages.push(["eightballresponse1", "%%NAME%% asked [%%QUESTION%%]. Fivey says [%%RESPONSE%%]"]);
    botChat.chatMessages.push(["speakcommand", "%%SPEAK%%"]);
    botChat.chatMessages.push(["userleft", "%%LEFTUSER%% has left the room :("]);
-   botChat.chatMessages.push(["userupvote", "%%NAME%% updubbed that song :thumbsup:"]);
+   botChat.chatMessages.push(["usergrabs", "%%NAME%% grabbed this song"]);
    //botChat.chatMessages.push(["eightballresponse1", "The all knowing Larry says: %%RESPONSE%%"]);
    botChat.chatMessages.push(["eightballresponse2", "%%NAME%% The all knowing Fivey says: %%RESPONSE%%"]);
    botChat.chatMessages.push(["lastplayed0", ":notes: This is the 1st time this song has been played! :notes:"]);
@@ -5722,7 +5722,7 @@ var API = {
     },
     EVENT_UPDATE_GRABS: function(data) {
       try { 
-	    API.chatLog("GRABBED BY: " + data.user.username);
+       API.sendChat(botChat.subChat(botChat.getChatMessage("usergrabs"), {name: data.user.username}));
 		var roomUser = USERS.lookupUserName(data.user.username);
 		if (typeof roomUser === 'boolean') return;
 		USERS.setLastActivity(roomUser, false);
